@@ -1,0 +1,8 @@
+# Made in Blockbench 3.5.2
+newmtl 0
+map_Kd borders.png 
+newmtl 1
+map_Kd dice100.png 
+newmtl 2
+map_Kd corners.png 
+newmtl none

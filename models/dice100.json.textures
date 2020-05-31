@@ -1,0 +1,12 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "borders",
+        "1": "dice100",
+        "2": "corners"
+      },
+      "name": "default"
+    }
+  }
+}

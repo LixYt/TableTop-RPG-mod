@@ -1,0 +1,26 @@
+{
+  "_fv": 6,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "conditionxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"condition_input\" deletable=\"false\" x=\"47\" y=\"25\"><value name=\"CONDITION\"><block type=\"logic_negate\"><value name=\"BOOL\"><block type=\"text_binary_ops\"><value name=\"A\"><block type=\"variables_get_text\"><field name=\"VAR\">global:CurrentPlayer</field></block></value><value name=\"B\"><block type=\"text\"><field name=\"TEXT\"/></block></value></block></value></block></value></block></xml>",
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "text": "Tour de <VAR:CurrentPlayer>",
+          "color": {
+            "value": -10092544,
+            "falpha": 0.0
+          },
+          "name": "Tour de <VAR:CurrentPlayer>",
+          "x": 204,
+          "y": 11
+        }
+      }
+    ],
+    "baseTexture": "",
+    "baseTextureW": 0,
+    "baseTextureH": 0
+  }
+}
