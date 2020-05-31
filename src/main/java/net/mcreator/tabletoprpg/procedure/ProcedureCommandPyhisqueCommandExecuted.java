@@ -95,13 +95,21 @@ public class ProcedureCommandPyhisqueCommandExecuted extends ElementsTableTopRPG
 				} else {
 					if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= 5)) {
 						resultTxt = (String) "Jet de Physique : R\u00E9ussite critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "reussite-critique";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= ((entity.getEntityData().getDouble("physique"))
 							+ (TableTopRPGVariables.MapVariables.get(world).modifier)))) {
 						resultTxt = (String) "Jet de Physique : R\u00E9ussite. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "reussite";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) > 95)) {
 						resultTxt = (String) "Jet de Physique : Echec critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "echec-critique";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else {
 						resultTxt = (String) "Jet de Physique : Echec. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "echec";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					}
 					{
 						MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
@@ -121,6 +129,11 @@ public class ProcedureCommandPyhisqueCommandExecuted extends ElementsTableTopRPG
 					TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					TableTopRPGVariables.MapVariables.get(world).lastDice = (double) 0;
 					TableTopRPGVariables.MapVariables.get(world).syncData(world);
+					{
+						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						$_dependencies.put("world", world);
+						ProcedureRunDisplayEchec.executeProcedure($_dependencies);
+					}
 				}
 			} else if ((((new Object() {
 				public String getText() {

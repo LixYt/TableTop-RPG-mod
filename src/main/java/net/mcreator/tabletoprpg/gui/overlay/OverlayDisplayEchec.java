@@ -10,16 +10,18 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import net.minecraft.world.World;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.tabletoprpg.TableTopRPGVariables;
 import net.mcreator.tabletoprpg.ElementsTableTopRPG;
 
 @ElementsTableTopRPG.ModElement.Tag
-public class OverlayTourDePlayer extends ElementsTableTopRPG.ModElement {
-	public OverlayTourDePlayer(ElementsTableTopRPG instance) {
-		super(instance, 26);
+public class OverlayDisplayEchec extends ElementsTableTopRPG.ModElement {
+	public OverlayDisplayEchec(ElementsTableTopRPG instance) {
+		super(instance, 29);
 	}
 
 	@Override
@@ -39,9 +41,20 @@ public class OverlayTourDePlayer extends ElementsTableTopRPG.ModElement {
 				int x = (int) entity.posX;
 				int y = (int) entity.posY;
 				int z = (int) entity.posZ;
-				if ((!(((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)).equals("")))) {
-					Minecraft.getMinecraft().fontRenderer.drawString("Tour de " + (TableTopRPGVariables.MapVariables.get(world).CurrentPlayer) + "",
-							posX + -114, posY + -119, -10092544);
+				if ((((TableTopRPGVariables.MapVariables.get(world).DisplayResult) == (true))
+						&& (((TableTopRPGVariables.MapVariables.get(world).CurrentResult)).equals("echec")))) {
+					GlStateManager.disableDepth();
+					GlStateManager.depthMask(false);
+					GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
+							GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+					GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+					GlStateManager.disableAlpha();
+					Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("tabletoprpg:textures/stamp-fail.png"));
+					Minecraft.getMinecraft().ingameGUI.drawTexturedModalRect(posX + -89, posY + -56, 0, 0, 256, 256);
+					GlStateManager.depthMask(true);
+					GlStateManager.enableDepth();
+					GlStateManager.enableAlpha();
+					GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 				}
 			}
 		}

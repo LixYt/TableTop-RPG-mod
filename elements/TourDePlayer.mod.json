@@ -14,8 +14,8 @@
             "falpha": 0.0
           },
           "name": "Tour de <VAR:CurrentPlayer>",
-          "x": 204,
-          "y": 11
+          "x": 198,
+          "y": 2
         }
       }
     ],

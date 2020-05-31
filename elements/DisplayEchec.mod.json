@@ -1,0 +1,22 @@
+{
+  "_fv": 6,
+  "_type": "overlay",
+  "definition": {
+    "priority": "NORMAL",
+    "conditionxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"condition_input\" deletable=\"false\" x=\"101\" y=\"58\"><value name=\"CONDITION\"><block type=\"logic_binary_ops\"><field name=\"OP\">AND</field><value name=\"A\"><block type=\"logic_binary_ops\"><field name=\"OP\">EQ</field><value name=\"A\"><block type=\"variables_get_logic\"><field name=\"VAR\">global:DisplayResult</field></block></value><value name=\"B\"><block type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></block></value></block></value><value name=\"B\"><block type=\"text_binary_ops\"><value name=\"A\"><block type=\"variables_get_text\"><field name=\"VAR\">global:CurrentResult</field></block></value><value name=\"B\"><block type=\"text\"><field name=\"TEXT\">echec</field></block></value></block></value></block></value></block></xml>",
+    "components": [
+      {
+        "type": "image",
+        "data": {
+          "image": "stamp-fail.png",
+          "name": "stamp-fail.png",
+          "x": 247,
+          "y": 127
+        }
+      }
+    ],
+    "baseTexture": "",
+    "baseTextureW": 0,
+    "baseTextureH": 0
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "_fv": 6,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"-226\" y=\"9\"><field name=\"trigger\">No additional trigger</field><next><block type=\"block_add\"><value name=\"block\"><block type=\"mcitem_allblocks\"><field name=\"value\">Blocks.CHEST</field></block></value><value name=\"x\"><block type=\"math_number\"><field name=\"NUM\">666</field></block></value><value name=\"y\"><block type=\"math_number\"><field name=\"NUM\">254</field></block></value><value name=\"z\"><block type=\"math_number\"><field name=\"NUM\">666</field></block></value><next><block type=\"variables_set_logic\"><field name=\"VAR\">global:DisplayResult</field><value name=\"VAL\"><block type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></block></value><next><block type=\"java_code\"><field name=\"CODE\">try{Thread.sleep(2000);}catch(InterruptedException ex){Thread.currentThread().interrupt();}</field><next><block type=\"variables_set_logic\"><field name=\"VAR\">global:DisplayResult</field><value name=\"VAL\"><block type=\"logic_boolean\"><field name=\"BOOL\">TRUE</field></block></value><next><block type=\"variables_set_text\"><field name=\"VAR\">global:CurrentResult</field><value name=\"VAL\"><block type=\"text\"><field name=\"TEXT\"/></block></value></block></next></block></next></block></next></block></next></block></next></block></xml>"
+  }
+}

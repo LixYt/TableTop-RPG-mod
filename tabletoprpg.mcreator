@@ -360,6 +360,30 @@
       "compiles": true,
       "locked_code": false,
       "ids": {}
+    },
+    {
+      "name": "DisplayEchec",
+      "type": "overlay",
+      "sortid": 29,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
+    },
+    {
+      "name": "RunDisplayEchec",
+      "type": "procedure",
+      "sortid": 30,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {},
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ]
+      }
     }
   ],
   "variable_elements": [
@@ -377,6 +401,18 @@
     },
     {
       "name": "CurrentPlayer",
+      "type": "string",
+      "scope": "map",
+      "value": ""
+    },
+    {
+      "name": "DisplayResult",
+      "type": "logic",
+      "scope": "map",
+      "value": "false"
+    },
+    {
+      "name": "CurrentResult",
       "type": "string",
       "scope": "map",
       "value": ""

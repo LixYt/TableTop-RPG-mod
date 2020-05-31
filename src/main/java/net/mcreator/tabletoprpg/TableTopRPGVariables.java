@@ -17,6 +17,8 @@ public class TableTopRPGVariables {
 		public double lastDice = 0;
 		public double modifier = 0;
 		public String CurrentPlayer = "";
+		public boolean DisplayResult = false;
+		public String CurrentResult = "";
 		public MapVariables() {
 			super(DATA_NAME);
 		}
@@ -30,6 +32,8 @@ public class TableTopRPGVariables {
 			lastDice = nbt.getDouble("lastDice");
 			modifier = nbt.getDouble("modifier");
 			CurrentPlayer = nbt.getString("CurrentPlayer");
+			DisplayResult = nbt.getBoolean("DisplayResult");
+			CurrentResult = nbt.getString("CurrentResult");
 		}
 
 		@Override
@@ -37,6 +41,8 @@ public class TableTopRPGVariables {
 			nbt.setDouble("lastDice", lastDice);
 			nbt.setDouble("modifier", modifier);
 			nbt.setString("CurrentPlayer", CurrentPlayer);
+			nbt.setBoolean("DisplayResult", DisplayResult);
+			nbt.setString("CurrentResult", CurrentResult);
 			return nbt;
 		}
 
