@@ -483,6 +483,18 @@
       "item.logiqueroll.name": "Logique Roll",
       "item.dice100.name": "Dice100",
       "item.physiqueroll.name": "Physique Roll"
+    },
+    "fr_fr": {
+      "item.requestturn.name": "Prendre mon tour",
+      "item.dice3.name": "Dès 3",
+      "item.dice9.name": "Dès 9",
+      "item.mentalroll.name": "Jet de mental",
+      "item.dice5.name": "Dès 5",
+      "item.dice10.name": "Dès 10",
+      "item.dice7.name": "Dès 7",
+      "item.logiqueroll.name": "Jet de logique",
+      "item.dice100.name": "Dès 100",
+      "item.physiqueroll.name": "Jet de physique"
     }
   },
   "workspaceSettings": {
