@@ -40,7 +40,7 @@ public class ProcedureDicerightclickedinair extends ElementsTableTopRPG.ModEleme
 		String output = "";
 		String playerName = "";
 		if ((!(world.isRemote))) {
-			if (((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer).contains((entity.getDisplayName().getFormattedText())))) {
+			if ((((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)).equals((entity.getDisplayName().getFormattedText())))) {
 				diceSize = (double) new Object() {
 					int convert(String s) {
 						try {

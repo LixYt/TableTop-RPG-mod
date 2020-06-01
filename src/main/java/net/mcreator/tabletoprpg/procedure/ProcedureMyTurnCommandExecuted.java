@@ -25,5 +25,7 @@ public class ProcedureMyTurnCommandExecuted extends ElementsTableTopRPG.ModEleme
 		World world = (World) dependencies.get("world");
 		TableTopRPGVariables.MapVariables.get(world).CurrentPlayer = (String) (entity.getDisplayName().getFormattedText());
 		TableTopRPGVariables.MapVariables.get(world).syncData(world);
+		System.out.println((entity.getDisplayName().getFormattedText()));
+		System.out.println(((entity.getDisplayName().getFormattedText())).length());
 	}
 }

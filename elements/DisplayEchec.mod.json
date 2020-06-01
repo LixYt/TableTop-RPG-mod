@@ -8,10 +8,10 @@
       {
         "type": "image",
         "data": {
-          "image": "stamp-fail.png",
-          "name": "stamp-fail.png",
-          "x": 247,
-          "y": 127
+          "image": "title-echec.png",
+          "name": "title-echec.png",
+          "x": 185,
+          "y": 29
         }
       }
     ],

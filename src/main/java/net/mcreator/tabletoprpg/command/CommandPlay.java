@@ -11,7 +11,7 @@ import net.minecraft.command.ICommandSender;
 import net.minecraft.command.ICommand;
 import net.minecraft.command.CommandHandler;
 
-import net.mcreator.tabletoprpg.procedure.ProcedureCommandPyhisqueCommandExecuted;
+import net.mcreator.tabletoprpg.procedure.ProcedurePlayCommandExecuted;
 import net.mcreator.tabletoprpg.ElementsTableTopRPG;
 
 import java.util.List;
@@ -20,9 +20,9 @@ import java.util.Arrays;
 import java.util.ArrayList;
 
 @ElementsTableTopRPG.ModElement.Tag
-public class CommandCommandPyhisque extends ElementsTableTopRPG.ModElement {
-	public CommandCommandPyhisque(ElementsTableTopRPG instance) {
-		super(instance, 10);
+public class CommandPlay extends ElementsTableTopRPG.ModElement {
+	public CommandPlay(ElementsTableTopRPG instance) {
+		super(instance, 31);
 	}
 
 	@Override
@@ -57,12 +57,12 @@ public class CommandCommandPyhisque extends ElementsTableTopRPG.ModElement {
 
 		@Override
 		public String getName() {
-			return "physique";
+			return "play";
 		}
 
 		@Override
 		public String getUsage(ICommandSender var1) {
-			return "/physique [<arguments>]";
+			return "/play [<arguments>]";
 		}
 
 		@Override
@@ -81,10 +81,9 @@ public class CommandCommandPyhisque extends ElementsTableTopRPG.ModElement {
 				});
 				{
 					java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
-					$_dependencies.put("entity", entity);
 					$_dependencies.put("cmdparams", cmdparams);
 					$_dependencies.put("world", world);
-					ProcedureCommandPyhisqueCommandExecuted.executeProcedure($_dependencies);
+					ProcedurePlayCommandExecuted.executeProcedure($_dependencies);
 				}
 			}
 		}

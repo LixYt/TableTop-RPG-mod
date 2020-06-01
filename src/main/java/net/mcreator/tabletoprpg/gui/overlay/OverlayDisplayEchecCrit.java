@@ -19,9 +19,9 @@ import net.mcreator.tabletoprpg.TableTopRPGVariables;
 import net.mcreator.tabletoprpg.ElementsTableTopRPG;
 
 @ElementsTableTopRPG.ModElement.Tag
-public class OverlayDisplayEchec extends ElementsTableTopRPG.ModElement {
-	public OverlayDisplayEchec(ElementsTableTopRPG instance) {
-		super(instance, 29);
+public class OverlayDisplayEchecCrit extends ElementsTableTopRPG.ModElement {
+	public OverlayDisplayEchecCrit(ElementsTableTopRPG instance) {
+		super(instance, 32);
 	}
 
 	@Override
@@ -42,15 +42,15 @@ public class OverlayDisplayEchec extends ElementsTableTopRPG.ModElement {
 				int y = (int) entity.posY;
 				int z = (int) entity.posZ;
 				if ((((TableTopRPGVariables.MapVariables.get(world).DisplayResult) == (true))
-						&& (((TableTopRPGVariables.MapVariables.get(world).CurrentResult)).equals("echec")))) {
+						&& (((TableTopRPGVariables.MapVariables.get(world).CurrentResult)).equals("echec-critique")))) {
 					GlStateManager.disableDepth();
 					GlStateManager.depthMask(false);
 					GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
 							GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
 					GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
 					GlStateManager.disableAlpha();
-					Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("tabletoprpg:textures/title-echec.png"));
-					Minecraft.getMinecraft().ingameGUI.drawTexturedModalRect(posX + -120, posY + -105, 0, 0, 256, 256);
+					Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("tabletoprpg:textures/title-echec-crit.png"));
+					Minecraft.getMinecraft().ingameGUI.drawTexturedModalRect(posX + -120, posY + -103, 0, 0, 256, 256);
 					GlStateManager.depthMask(true);
 					GlStateManager.enableDepth();
 					GlStateManager.enableAlpha();
