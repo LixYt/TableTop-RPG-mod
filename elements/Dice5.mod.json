@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "dice5",
+    "texture": "dice5v2",
     "customModelName": "Normal",
     "name": "Dice 5",
     "creativeTab": {

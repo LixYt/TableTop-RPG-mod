@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "strong",
+    "texture": "fist",
     "customModelName": "Normal",
     "name": "Physique Roll",
     "creativeTab": {
