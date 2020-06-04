@@ -359,6 +359,10 @@
       "metadata": {
         "dependencies": [
           {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
             "name": "cmdparams",
             "type": "map"
           },

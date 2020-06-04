@@ -1,6 +1,8 @@
 package net.mcreator.tabletoprpg.procedure;
 
 import net.minecraft.world.World;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.Entity;
 
 import net.mcreator.tabletoprpg.TableTopRPGVariables;
 import net.mcreator.tabletoprpg.ElementsTableTopRPG;
@@ -14,6 +16,10 @@ public class ProcedurePlayCommandExecuted extends ElementsTableTopRPG.ModElement
 	}
 
 	public static void executeProcedure(java.util.HashMap<String, Object> dependencies) {
+		if (dependencies.get("entity") == null) {
+			System.err.println("Failed to load dependency entity for procedure PlayCommandExecuted!");
+			return;
+		}
 		if (dependencies.get("cmdparams") == null) {
 			System.err.println("Failed to load dependency cmdparams for procedure PlayCommandExecuted!");
 			return;
@@ -22,17 +28,20 @@ public class ProcedurePlayCommandExecuted extends ElementsTableTopRPG.ModElement
 			System.err.println("Failed to load dependency world for procedure PlayCommandExecuted!");
 			return;
 		}
+		Entity entity = (Entity) dependencies.get("entity");
 		HashMap cmdparams = (HashMap) dependencies.get("cmdparams");
 		World world = (World) dependencies.get("world");
-		TableTopRPGVariables.MapVariables.get(world).CurrentPlayer = (String) (new Object() {
-			public String getText() {
-				String param = (String) cmdparams.get("0");
-				if (param != null) {
-					return param;
+		if (((entity instanceof EntityPlayer) ? ((EntityPlayer) entity).capabilities.isCreativeMode : false)) {
+			TableTopRPGVariables.MapVariables.get(world).CurrentPlayer = (String) (new Object() {
+				public String getText() {
+					String param = (String) cmdparams.get("0");
+					if (param != null) {
+						return param;
+					}
+					return "";
 				}
-				return "";
-			}
-		}.getText());
-		TableTopRPGVariables.MapVariables.get(world).syncData(world);
+			}.getText());
+			TableTopRPGVariables.MapVariables.get(world).syncData(world);
+		}
 	}
 }
