@@ -67,8 +67,10 @@ public class ProcedureCommandPyhisqueCommandExecuted extends ElementsTableTopRPG
 				{
 					MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
 					if (mcserv != null)
-						mcserv.getPlayerList().sendMessage(
-								new TextComponentString((("Physique set to ") + "" + (Math.round((entity.getEntityData().getDouble("physique")))))));
+						mcserv.getPlayerList()
+								.sendMessage(new TextComponentString((("Le physique de ") + "" + ((((entity.getDisplayName().getUnformattedText()))
+										+ ""
+										+ (((" est d\u00E9finit \u00E0 ") + "" + (Math.round((entity.getEntityData().getDouble("physique")))))))))));
 				}
 			} else if ((((new Object() {
 				public String getText() {

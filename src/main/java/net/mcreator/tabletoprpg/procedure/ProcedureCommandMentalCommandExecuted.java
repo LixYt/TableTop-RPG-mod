@@ -67,8 +67,9 @@ public class ProcedureCommandMentalCommandExecuted extends ElementsTableTopRPG.M
 				{
 					MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
 					if (mcserv != null)
-						mcserv.getPlayerList().sendMessage(
-								new TextComponentString((("Mental set to ") + "" + (Math.round((entity.getEntityData().getDouble("mental")))))));
+						mcserv.getPlayerList()
+								.sendMessage(new TextComponentString((("Le mental de ") + "" + ((((entity.getDisplayName().getUnformattedText())) + ""
+										+ (((" est d\u00E9finit \u00E0 ") + "" + (Math.round((entity.getEntityData().getDouble("mental")))))))))));
 				}
 			} else if ((((new Object() {
 				public String getText() {
@@ -94,14 +95,18 @@ public class ProcedureCommandMentalCommandExecuted extends ElementsTableTopRPG.M
 					}
 				} else {
 					if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= 5)) {
-						resultTxt = (String) "Jet de Mental : R\u00E9ussite critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Mental : R\u00E9ussite critique. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= ((entity.getEntityData().getDouble("mental"))
 							+ (TableTopRPGVariables.MapVariables.get(world).modifier)))) {
-						resultTxt = (String) "Jet de Mental : R\u00E9ussite. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Mental : R\u00E9ussite. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) > 95)) {
-						resultTxt = (String) "Jet de Mental : Echec critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Mental : Echec critique. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else {
-						resultTxt = (String) "Jet de Mental : Echec. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Mental : Echec. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					}
 					{
 						MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
@@ -121,6 +126,11 @@ public class ProcedureCommandMentalCommandExecuted extends ElementsTableTopRPG.M
 					TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					TableTopRPGVariables.MapVariables.get(world).lastDice = (double) 0;
 					TableTopRPGVariables.MapVariables.get(world).syncData(world);
+					{
+						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						$_dependencies.put("world", world);
+						ProcedureRunDisplayEchec.executeProcedure($_dependencies);
+					}
 				}
 			} else if ((((new Object() {
 				public String getText() {

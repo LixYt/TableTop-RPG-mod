@@ -67,8 +67,9 @@ public class ProcedureCommandLogiqueCommandExecuted extends ElementsTableTopRPG.
 				{
 					MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
 					if (mcserv != null)
-						mcserv.getPlayerList().sendMessage(
-								new TextComponentString((("Logique set to ") + "" + (Math.round((entity.getEntityData().getDouble("logique")))))));
+						mcserv.getPlayerList()
+								.sendMessage(new TextComponentString((("La Logique de ") + "" + ((((entity.getDisplayName().getFormattedText())) + ""
+										+ (((" est d\u00E9finit \u00E0 ") + "" + (Math.round((entity.getEntityData().getDouble("logique")))))))))));
 				}
 			} else if ((((new Object() {
 				public String getText() {
@@ -94,14 +95,18 @@ public class ProcedureCommandLogiqueCommandExecuted extends ElementsTableTopRPG.
 					}
 				} else {
 					if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= 5)) {
-						resultTxt = (String) "Jet de Logique : R\u00E9ussite critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Logique : R\u00E9ussite critique. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= ((entity.getEntityData().getDouble("logique"))
 							+ (TableTopRPGVariables.MapVariables.get(world).modifier)))) {
-						resultTxt = (String) "Jet de logique : R\u00E9ussite. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de logique : R\u00E9ussite. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) > 95)) {
-						resultTxt = (String) "Jet de Logique : Echec critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Logique : Echec critique. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else {
-						resultTxt = (String) "Jet de Logique : Echec. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Logique : Echec. ";
+						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					}
 					{
 						MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
@@ -121,6 +126,11 @@ public class ProcedureCommandLogiqueCommandExecuted extends ElementsTableTopRPG.
 					TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					TableTopRPGVariables.MapVariables.get(world).lastDice = (double) 0;
 					TableTopRPGVariables.MapVariables.get(world).syncData(world);
+					{
+						java.util.HashMap<String, Object> $_dependencies = new java.util.HashMap<>();
+						$_dependencies.put("world", world);
+						ProcedureRunDisplayEchec.executeProcedure($_dependencies);
+					}
 				}
 			} else if ((((new Object() {
 				public String getText() {

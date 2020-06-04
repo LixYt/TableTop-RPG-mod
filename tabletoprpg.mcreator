@@ -298,26 +298,6 @@
       }
     },
     {
-      "name": "PlayerRoundCommandExecuted",
-      "type": "procedure",
-      "sortid": 25,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "cmdparams",
-            "type": "map"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
       "name": "TourDePlayer",
       "type": "overlay",
       "sortid": 26,

@@ -42,6 +42,10 @@ public class ProcedurePlayCommandExecuted extends ElementsTableTopRPG.ModElement
 				}
 			}.getText());
 			TableTopRPGVariables.MapVariables.get(world).syncData(world);
+			TableTopRPGVariables.MapVariables.get(world).lastDice = (double) 0;
+			TableTopRPGVariables.MapVariables.get(world).syncData(world);
+			TableTopRPGVariables.MapVariables.get(world).modifier = (double) 0;
+			TableTopRPGVariables.MapVariables.get(world).syncData(world);
 		}
 	}
 }

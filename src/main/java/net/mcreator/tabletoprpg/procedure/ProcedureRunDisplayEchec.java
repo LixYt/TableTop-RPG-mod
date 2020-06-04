@@ -1,8 +1,6 @@
 package net.mcreator.tabletoprpg.procedure;
 
 import net.minecraft.world.World;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.init.Blocks;
 
 import net.mcreator.tabletoprpg.TableTopRPGVariables;
 import net.mcreator.tabletoprpg.ElementsTableTopRPG;
@@ -19,7 +17,6 @@ public class ProcedureRunDisplayEchec extends ElementsTableTopRPG.ModElement {
 			return;
 		}
 		World world = (World) dependencies.get("world");
-		world.setBlockState(new BlockPos((int) 666, (int) 254, (int) 666), Blocks.CHEST.getDefaultState(), 3);
 		TableTopRPGVariables.MapVariables.get(world).DisplayResult = (boolean) (true);
 		TableTopRPGVariables.MapVariables.get(world).syncData(world);
 		try {
@@ -30,6 +27,10 @@ public class ProcedureRunDisplayEchec extends ElementsTableTopRPG.ModElement {
 		TableTopRPGVariables.MapVariables.get(world).DisplayResult = (boolean) (true);
 		TableTopRPGVariables.MapVariables.get(world).syncData(world);
 		TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "";
+		TableTopRPGVariables.MapVariables.get(world).syncData(world);
+		TableTopRPGVariables.MapVariables.get(world).lastDice = (double) 0;
+		TableTopRPGVariables.MapVariables.get(world).syncData(world);
+		TableTopRPGVariables.MapVariables.get(world).lastDice = (double) 0;
 		TableTopRPGVariables.MapVariables.get(world).syncData(world);
 	}
 }
