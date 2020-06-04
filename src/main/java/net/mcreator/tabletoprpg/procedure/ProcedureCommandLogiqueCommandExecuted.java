@@ -95,17 +95,21 @@ public class ProcedureCommandLogiqueCommandExecuted extends ElementsTableTopRPG.
 					}
 				} else {
 					if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= 5)) {
-						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Logique : R\u00E9ussite critique. ";
+						resultTxt = (String) "Jet de Logique : R\u00E9ussite critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "reussite-critique";
 						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) <= ((entity.getEntityData().getDouble("logique"))
 							+ (TableTopRPGVariables.MapVariables.get(world).modifier)))) {
-						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de logique : R\u00E9ussite. ";
+						resultTxt = (String) "Jet de logique : R\u00E9ussite. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "reussite";
 						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else if (((TableTopRPGVariables.MapVariables.get(world).lastDice) > 95)) {
-						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Logique : Echec critique. ";
+						resultTxt = (String) "Jet de Logique : Echec critique. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "echec-critique";
 						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					} else {
-						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "Jet de Logique : Echec. ";
+						resultTxt = (String) "Jet de Logique : Echec. ";
+						TableTopRPGVariables.MapVariables.get(world).CurrentResult = (String) "echec";
 						TableTopRPGVariables.MapVariables.get(world).syncData(world);
 					}
 					{
