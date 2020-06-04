@@ -9,7 +9,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.Entity;
 
-import net.mcreator.tabletoprpg.item.ItemRequestTurn;
 import net.mcreator.tabletoprpg.item.ItemPhysiqueRoll;
 import net.mcreator.tabletoprpg.item.ItemMentalRoll;
 import net.mcreator.tabletoprpg.item.ItemLogiqueRoll;
@@ -49,11 +48,6 @@ public class ProcedureOnJoin extends ElementsTableTopRPG.ModElement {
 				((EntityPlayer) entity).inventory.clear();
 			if (entity instanceof EntityPlayer) {
 				ItemStack _setstack = new ItemStack(ItemDice100.block, (int) (1));
-				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
-			}
-			if (entity instanceof EntityPlayer) {
-				ItemStack _setstack = new ItemStack(ItemRequestTurn.block, (int) (1));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
 			}

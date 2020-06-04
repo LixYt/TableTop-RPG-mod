@@ -40,7 +40,7 @@ public class ProcedureDicerightclickedinair extends ElementsTableTopRPG.ModEleme
 		String output = "";
 		String playerName = "";
 		if ((!(world.isRemote))) {
-			if ((((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)).equals((entity.getDisplayName().getFormattedText())))) {
+			if ((((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)).equals((entity.getDisplayName().getUnformattedText())))) {
 				diceSize = (double) new Object() {
 					int convert(String s) {
 						try {
@@ -84,7 +84,7 @@ public class ProcedureDicerightclickedinair extends ElementsTableTopRPG.ModEleme
 					if (mcserv != null)
 						mcserv.getPlayerList()
 								.sendMessage(new TextComponentString(
-										(((entity.getDisplayName().getFormattedText())) + "" + (((", ce n'est pas ton tour mais celui de [") + ""
+										(((entity.getDisplayName().getUnformattedText())) + "" + (((", ce n'est pas ton tour mais celui de [") + ""
 												+ ((((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)) + "" + ("]"))))))));
 				}
 			}

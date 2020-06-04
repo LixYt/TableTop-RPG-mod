@@ -326,42 +326,6 @@
       "ids": {}
     },
     {
-      "name": "MyTurnCommandExecuted",
-      "type": "procedure",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {},
-      "metadata": {
-        "dependencies": [
-          {
-            "name": "entity",
-            "type": "entity"
-          },
-          {
-            "name": "world",
-            "type": "world"
-          }
-        ]
-      }
-    },
-    {
-      "name": "MyTurn",
-      "type": "command",
-      "sortid": 27,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
-      "name": "RequestTurn",
-      "type": "item",
-      "sortid": 28,
-      "compiles": true,
-      "locked_code": false,
-      "ids": {}
-    },
-    {
       "name": "DisplayEchec",
       "type": "overlay",
       "sortid": 29,
@@ -473,7 +437,6 @@
   "sound_elements": [],
   "language_map": {
     "en_us": {
-      "item.requestturn.name": "Request Turn",
       "item.dice3.name": "Dice 3",
       "item.dice9.name": "Dice 9",
       "item.mentalroll.name": "Mental Roll",
@@ -485,7 +448,6 @@
       "item.physiqueroll.name": "Physique Roll"
     },
     "fr_fr": {
-      "item.requestturn.name": "Prendre mon tour",
       "item.dice3.name": "Dès 3",
       "item.dice9.name": "Dès 9",
       "item.mentalroll.name": "Jet de mental",
