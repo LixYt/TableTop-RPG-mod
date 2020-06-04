@@ -1,6 +1,10 @@
 package net.mcreator.tabletoprpg.procedure;
 
+import net.minecraftforge.fml.common.FMLCommonHandler;
+
 import net.minecraft.world.World;
+import net.minecraft.util.text.TextComponentString;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.Entity;
 
 import net.mcreator.tabletoprpg.TableTopRPGVariables;
@@ -31,7 +35,7 @@ public class ProcedureModifierCommandExecuted extends ElementsTableTopRPG.ModEle
 		HashMap cmdparams = (HashMap) dependencies.get("cmdparams");
 		World world = (World) dependencies.get("world");
 		if ((!(world.isRemote))) {
-			if ((((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)).equals((entity.getDisplayName().getFormattedText())))) {
+			if ((((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)).equals((entity.getDisplayName().getUnformattedText())))) {
 				TableTopRPGVariables.MapVariables.get(world).modifier = (double) new Object() {
 					int convert(String s) {
 						try {
@@ -50,6 +54,13 @@ public class ProcedureModifierCommandExecuted extends ElementsTableTopRPG.ModEle
 					}
 				}.getText()));
 				TableTopRPGVariables.MapVariables.get(world).syncData(world);
+			} else {
+				{
+					MinecraftServer mcserv = FMLCommonHandler.instance().getMinecraftServerInstance();
+					if (mcserv != null)
+						mcserv.getPlayerList().sendMessage(
+								new TextComponentString((((entity.getDisplayName().getUnformattedText())) + "" + (", ce n'est pas ton tour !"))));
+				}
 			}
 		}
 	}
