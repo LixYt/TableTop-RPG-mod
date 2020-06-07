@@ -10,7 +10,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import net.minecraft.world.World;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.tabletoprpg.TableTopRPGVariables;
@@ -41,10 +43,24 @@ public class OverlayLatestRoll extends ElementsTableTopRPG.ModElement {
 				int z = (int) entity.posZ;
 				if ((((TableTopRPGVariables.MapVariables.get(world).lastDice) > 0)
 						|| ((TableTopRPGVariables.MapVariables.get(world).modifier) != 0))) {
-					Minecraft.getMinecraft().fontRenderer.drawString(
-							"Dernier lanc\u00E9 = " + (TableTopRPGVariables.MapVariables.get(world).lastDice) + "", posX + 58, posY + -114, -1);
-					Minecraft.getMinecraft().fontRenderer.drawString(
-							"Modifier actuel = " + (TableTopRPGVariables.MapVariables.get(world).modifier) + "", posX + 58, posY + -101, -1);
+					GlStateManager.disableDepth();
+					GlStateManager.depthMask(false);
+					GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
+							GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+					GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+					GlStateManager.disableAlpha();
+					Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("tabletoprpg:textures/black_box3.png"));
+					Minecraft.getMinecraft().ingameGUI.drawTexturedModalRect(posX + 74, posY + -119, 0, 0, 256, 256);
+					GlStateManager.depthMask(true);
+					GlStateManager.enableDepth();
+					GlStateManager.enableAlpha();
+					GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+					Minecraft.getMinecraft().fontRenderer.drawString("Dernier lanc\u00E9 : ", posX + 93, posY + -109, -1);
+					Minecraft.getMinecraft().fontRenderer.drawString("Modifier : ", posX + 93, posY + -89, -1);
+					Minecraft.getMinecraft().fontRenderer.drawString("" + (TableTopRPGVariables.MapVariables.get(world).modifier) + "", posX + 173,
+							posY + -89, -1);
+					Minecraft.getMinecraft().fontRenderer.drawString("" + (TableTopRPGVariables.MapVariables.get(world).lastDice) + "", posX + 173,
+							posY + -109, -1);
 				}
 			}
 		}

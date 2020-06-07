@@ -10,7 +10,9 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
 
 import net.minecraft.world.World;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.tabletoprpg.TableTopRPGVariables;
@@ -40,8 +42,21 @@ public class OverlayTourDePlayer extends ElementsTableTopRPG.ModElement {
 				int y = (int) entity.posY;
 				int z = (int) entity.posZ;
 				if ((!(((TableTopRPGVariables.MapVariables.get(world).CurrentPlayer)).equals("")))) {
-					Minecraft.getMinecraft().fontRenderer.drawString("Tour de " + (TableTopRPGVariables.MapVariables.get(world).CurrentPlayer) + "",
-							posX + -114, posY + -119, -10092544);
+					GlStateManager.disableDepth();
+					GlStateManager.depthMask(false);
+					GlStateManager.tryBlendFuncSeparate(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA,
+							GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ZERO);
+					GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+					GlStateManager.disableAlpha();
+					Minecraft.getMinecraft().renderEngine.bindTexture(new ResourceLocation("tabletoprpg:textures/black_box3.png"));
+					Minecraft.getMinecraft().ingameGUI.drawTexturedModalRect(posX + -219, posY + -118, 0, 0, 256, 256);
+					GlStateManager.depthMask(true);
+					GlStateManager.enableDepth();
+					GlStateManager.enableAlpha();
+					GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
+					Minecraft.getMinecraft().fontRenderer.drawString("Tour de ", posX + -198, posY + -108, -1);
+					Minecraft.getMinecraft().fontRenderer.drawString("" + (TableTopRPGVariables.MapVariables.get(world).CurrentPlayer) + "",
+							posX + -189, posY + -90, -1);
 				}
 			}
 		}

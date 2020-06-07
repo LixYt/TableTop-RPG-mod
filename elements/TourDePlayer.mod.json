@@ -6,16 +6,38 @@
     "conditionxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"condition_input\" deletable=\"false\" x=\"47\" y=\"25\"><value name=\"CONDITION\"><block type=\"logic_negate\"><value name=\"BOOL\"><block type=\"text_binary_ops\"><value name=\"A\"><block type=\"variables_get_text\"><field name=\"VAR\">global:CurrentPlayer</field></block></value><value name=\"B\"><block type=\"text\"><field name=\"TEXT\"/></block></value></block></value></block></value></block></xml>",
     "components": [
       {
+        "type": "image",
+        "data": {
+          "image": "black_box3.png",
+          "name": "black_box3.png",
+          "x": -13,
+          "y": 3
+        }
+      },
+      {
         "type": "label",
         "data": {
-          "text": "Tour de <VAR:CurrentPlayer>",
+          "text": "Tour de ",
           "color": {
-            "value": -10092544,
+            "value": -1,
             "falpha": 0.0
           },
-          "name": "Tour de <VAR:CurrentPlayer>",
-          "x": 198,
-          "y": 2
+          "name": "Tour de ",
+          "x": 30,
+          "y": 24
+        }
+      },
+      {
+        "type": "label",
+        "data": {
+          "text": "<VAR:CurrentPlayer>",
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "name": "<VAR:CurrentPlayer>",
+          "x": 48,
+          "y": 60
         }
       }
     ],
