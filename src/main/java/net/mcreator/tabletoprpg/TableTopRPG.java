@@ -45,7 +45,7 @@ import java.util.function.Supplier;
 @Mod(modid = TableTopRPG.MODID, version = TableTopRPG.VERSION)
 public class TableTopRPG {
 	public static final String MODID = "tabletoprpg";
-	public static final String VERSION = "0.1.0";
+	public static final String VERSION = "1.0.0";
 	public static final SimpleNetworkWrapper PACKET_HANDLER = NetworkRegistry.INSTANCE.newSimpleChannel("tabletoprpg:a");
 	@SidedProxy(clientSide = "net.mcreator.tabletoprpg.ClientProxyTableTopRPG", serverSide = "net.mcreator.tabletoprpg.ServerProxyTableTopRPG")
 	public static IProxyTableTopRPG proxy;

@@ -446,9 +446,9 @@
   "workspaceSettings": {
     "modid": "tabletoprpg",
     "modName": "TableTop RPG",
-    "version": "0.1.0",
+    "version": "1.0.0",
     "description": "A tabletop mod for simple 1d100 system",
-    "author": "Lix, MCreator",
+    "author": "Lix",
     "websiteURL": "https://lix.yt",
     "disableForgeVersionCheck": true,
     "serverSideOnly": false,
