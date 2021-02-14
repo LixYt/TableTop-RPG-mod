@@ -12,10 +12,7 @@ import net.minecraft.entity.Entity;
 import net.mcreator.tabletoprpg.item.ItemPhysiqueRoll;
 import net.mcreator.tabletoprpg.item.ItemMentalRoll;
 import net.mcreator.tabletoprpg.item.ItemLogiqueRoll;
-import net.mcreator.tabletoprpg.item.ItemDice9;
-import net.mcreator.tabletoprpg.item.ItemDice7;
-import net.mcreator.tabletoprpg.item.ItemDice5;
-import net.mcreator.tabletoprpg.item.ItemDice3;
+import net.mcreator.tabletoprpg.item.ItemDice6;
 import net.mcreator.tabletoprpg.item.ItemDice100;
 import net.mcreator.tabletoprpg.item.ItemDice10;
 import net.mcreator.tabletoprpg.ElementsTableTopRPG;
@@ -47,11 +44,6 @@ public class ProcedureOnJoin extends ElementsTableTopRPG.ModElement {
 			if (entity instanceof EntityPlayer)
 				((EntityPlayer) entity).inventory.clear();
 			if (entity instanceof EntityPlayer) {
-				ItemStack _setstack = new ItemStack(ItemDice100.block, (int) (1));
-				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
-			}
-			if (entity instanceof EntityPlayer) {
 				ItemStack _setstack = new ItemStack(ItemPhysiqueRoll.block, (int) (1));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
@@ -67,27 +59,17 @@ public class ProcedureOnJoin extends ElementsTableTopRPG.ModElement {
 				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
 			}
 			if (entity instanceof EntityPlayer) {
-				ItemStack _setstack = new ItemStack(ItemDice3.block, (int) (1));
-				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
-			}
-			if (entity instanceof EntityPlayer) {
-				ItemStack _setstack = new ItemStack(ItemDice5.block, (int) (1));
-				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
-			}
-			if (entity instanceof EntityPlayer) {
-				ItemStack _setstack = new ItemStack(ItemDice7.block, (int) (1));
-				_setstack.setCount(1);
-				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
-			}
-			if (entity instanceof EntityPlayer) {
-				ItemStack _setstack = new ItemStack(ItemDice9.block, (int) (1));
+				ItemStack _setstack = new ItemStack(ItemDice100.block, (int) (1));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
 			}
 			if (entity instanceof EntityPlayer) {
 				ItemStack _setstack = new ItemStack(ItemDice10.block, (int) (1));
+				_setstack.setCount(1);
+				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
+			}
+			if (entity instanceof EntityPlayer) {
+				ItemStack _setstack = new ItemStack(ItemDice6.block, (int) (1));
 				_setstack.setCount(1);
 				ItemHandlerHelper.giveItemToPlayer(((EntityPlayer) entity), _setstack);
 			}

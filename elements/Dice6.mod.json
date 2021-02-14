@@ -3,9 +3,9 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "dice100",
+    "texture": "ice6",
     "customModelName": "Normal",
-    "name": "Dice100",
+    "name": "Dice 6",
     "creativeTab": {
       "value": "TOOLS"
     },
@@ -19,7 +19,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInfo": [
-      "100 faces dice"
+      "6 faces dice"
     ],
     "hasGlow": false,
     "onRightClickedInAir": {

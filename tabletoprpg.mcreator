@@ -384,6 +384,14 @@
       "compiles": true,
       "locked_code": false,
       "ids": {}
+    },
+    {
+      "name": "Dice6",
+      "type": "item",
+      "sortid": 35,
+      "compiles": true,
+      "locked_code": false,
+      "ids": {}
     }
   ],
   "variable_elements": [
@@ -422,6 +430,7 @@
   "language_map": {
     "en_us": {
       "item.dice3.name": "Dice 3",
+      "item.dice6.name": "Dice 6",
       "item.dice9.name": "Dice 9",
       "item.mentalroll.name": "Mental Roll",
       "item.dice5.name": "Dice 5",
@@ -433,6 +442,7 @@
     },
     "fr_fr": {
       "item.dice3.name": "Dès 3",
+      "item.dice6.name": "Dice 5",
       "item.dice9.name": "Dès 9",
       "item.mentalroll.name": "Jet de mental",
       "item.dice5.name": "Dès 5",

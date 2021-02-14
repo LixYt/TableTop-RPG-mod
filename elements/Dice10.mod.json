@@ -2,9 +2,9 @@
   "_fv": 6,
   "_type": "item",
   "definition": {
-    "renderType": 1,
+    "renderType": 0,
     "texture": "dice10",
-    "customModelName": "dice10:default",
+    "customModelName": "Normal",
     "name": "Dice 10",
     "creativeTab": {
       "value": "TOOLS"
